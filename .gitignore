@@ -1,4 +1,4 @@
 # Ignorar entorno virtual
-env
+api
 #Ignorar .vscode
 .vscode          
