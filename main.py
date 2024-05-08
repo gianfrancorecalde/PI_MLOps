@@ -13,12 +13,12 @@ reviews = pd.read_parquet('user_Reviews')
 @app.get("/PlayTimeGenre/{genero}")
 async def PlayTimeGenre(genero :str):
     df_merged = pd.merge(items, games, left_on='item_id', right_on='id')
-    df_genres_filtrados = df_merged[df_merged['genres']==genero.lower]
+    df_genres_filtrados = df_merged[df_merged['genres']==genero.lower()]
     df_filtrado_final = pd.merge(reviews,df_genres_filtrados, on=['user_id','item_id'])
     agrupado = df_filtrado_final.groupby('posted')['playtime_forever'].sum()
     agrupado_ordenado = agrupado.sort_values(ascending=False)
     anio=agrupado_ordenado.idxmax()
-    return {"Año de lanzamiento con más horas jugadas para Género "+genero : anio.year}
+    return {"Año de lanzamiento con más horas jugadas para el Género " + genero : anio.year}
 
 @app.get("/UserForGenre/{genero}")
 async def UserForGenre(genero :str):

@@ -1,3 +1,4 @@
 # Ignorar entorno virtual
 entorno
-__pycache__       
+__pycache__
+pruebas.ipynb       
