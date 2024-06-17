@@ -1,2 +1,2 @@
-# PI_MLOps
-Proyecto Individual DPT04 - Henry
+# Sistema de Recomendacion de Videojuegos de Steam
+Proyecto individual
